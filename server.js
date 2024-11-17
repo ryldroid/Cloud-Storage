@@ -22,10 +22,14 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 app.use("/node_modules", express.static("node_modules"));
 app.use(helmet());
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 app.use(
   session({
