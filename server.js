@@ -37,7 +37,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: mongoUri }),
-    cookie: { secure: false }, // Set to true for HTTPS in production
+    cookie: { secure: true }, // Set to true for HTTPS in production
   })
 );
 
