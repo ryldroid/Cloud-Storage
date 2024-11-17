@@ -1,3 +1,5 @@
+console.log("Updated version");
+
 // Password visibility toggle
 document
   .getElementById("togglePassword")
